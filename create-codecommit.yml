@@ -1,0 +1,14 @@
+Resources:
+  MyFirstRepository:
+    Type: AWS::CodeCommit::Repository
+    Properties: 
+      RepositoryDescription: Our first CodeCommit by CloudFormation # descrição do repositório
+      RepositoryName: viana-CodeCommit # nome do repositório
+      Code:
+        BranchName: vianinhaBranch # nome da main branch
+        S3:
+          Bucket: exess # nome do bucket 
+          Key: "README.zip" # objeto dentro do bucket (sim, precisa ser zipado)
+      Tags: 
+        - Key: Owner
+          Value: raphael.viana
